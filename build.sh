@@ -24,7 +24,7 @@ git clone https://github.com/docker/docker-registry.git && cd docker-registry
 git checkout 0.9.0 && cd ..
 
 #Build Docker Registry container
-docker build -t private-registry /docker-registry/.
+docker build -t private-registry docker-registry/.
 
 #Run Docker Registry container
 ./start/start-registry.sh
@@ -54,7 +54,7 @@ update-ca-certificates
 cd ../../
 
 #Build NGINX container
-docker build -t nginx /nginx/.
+docker build -t registry-nginx nginx/.
 
 #Run NGINX container
 ./start/start-nginx.sh

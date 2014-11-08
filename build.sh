@@ -11,7 +11,7 @@ if ! env | grep ^REGISTRYHOST= > /dev/null; then
 fi
 
 #Check for Git
-if [ ! command -v git ]; then
+if [[ ! command -v git ]]; then
   if [ command -v apt-get ]; then
     apt-get install git
   else
@@ -30,8 +30,8 @@ docker build -t registry /docker-registry/.
 ./start/start-registry.sh
 
 #Modify NGINX configuration and certificate configuration
-sed -i "s/localhost/$REGISTRYHOST/g" ./config/docker-registry.conf
-sed -i "s/localhost/$REGISTRYHOST/g" ./certs/certificate-config
+sed -i "s/localhost/$REGISTRYHOST/g" ./nginx/config/docker-registry.conf
+sed -i "s/localhost/$REGISTRYHOST/g" ./nginx/certs/certificate-config
 
 #Generate Password
 htpasswd -bc /nginx/config/docker-registry.htpasswd $REGISTRYUSER $REGISTRYPASSWORD

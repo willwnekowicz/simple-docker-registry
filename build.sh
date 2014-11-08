@@ -13,9 +13,18 @@ fi
 #Check for Git
 if ! command -v git > /dev/null; then
   if command -v apt-get > /dev/null; then
-    apt-get install git
+    apt-get -y install git
   else
     echo "Please install Git."
+  fi
+fi
+
+#Check for htpasswd
+if ! command -v htpasswd > /dev/null; then
+  if command -v apt-get > /dev/null; then
+    apt-get -y install apache2-utils
+  else
+    echo "Please install apache2-utils."
   fi
 fi
 

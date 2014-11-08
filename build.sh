@@ -11,8 +11,8 @@ if ! env | grep ^REGISTRYHOST= > /dev/null; then
 fi
 
 #Check for Git
-if [[ ! command -v git ]]; then
-  if [ command -v apt-get ]; then
+if ! command -v git > /dev/null; then
+  if command -v apt-get > /dev/null; then
     apt-get install git
   else
     echo "Please install Git."

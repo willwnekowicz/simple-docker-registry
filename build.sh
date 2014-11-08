@@ -43,7 +43,7 @@ sed -i "s/localhost/$REGISTRYHOST/g" ./nginx/config/docker-registry.conf
 sed -i "s/localhost/$REGISTRYHOST/g" ./nginx/certs/certificate-config
 
 #Generate Password
-htpasswd -bc /nginx/config/docker-registry.htpasswd $REGISTRYUSER $REGISTRYPASSWORD
+htpasswd -bc nginx/config/docker-registry.htpasswd $REGISTRYUSER $REGISTRYPASSWORD
 
 #Generate SSL certificates
 #Generate Root key and certificate

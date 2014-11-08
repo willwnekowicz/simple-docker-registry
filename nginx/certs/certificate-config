@@ -1,0 +1,12 @@
+[ req ]
+distinguished_name     = req_distinguished_name
+prompt                 = no
+
+[ req_distinguished_name ]
+C                      = US
+ST                     = CA
+L                      = Silicon Valley
+O                      = One Click Private Docker Registry
+OU                     = None
+CN                     = localhost
+emailAddress           = none@none.com

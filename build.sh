@@ -29,11 +29,7 @@ if ! command -v htpasswd > /dev/null; then
 fi
 
 #Get Docker Registry
-git clone https://github.com/docker/docker-registry.git && cd docker-registry
-git checkout 0.9.0 && cd ..
-
-#Build Docker Registry container
-docker build -t private-registry docker-registry/.
+docker pull registry:0.9.0
 
 #Run Docker Registry container
 ./start/start-registry.sh

@@ -9,7 +9,8 @@ The script will setup two containers:
 2. [NGINX](https://registry.hub.docker.com/_/nginx/)  
   Configured with SSL certs and linked to the docker-registry container
 
-Dependencies: You'll need Git and Docker already installed on your server.
+Dependencies: You'll need Git and Docker already installed on your server.  
+Need a server? I recommend [Digital Ocean](https://www.digitalocean.com/?refcode=f19a6a1ccdc8).
 
 ##Server Install Instructions
 

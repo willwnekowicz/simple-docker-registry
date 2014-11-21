@@ -52,6 +52,8 @@ openssl genrsa -out private-registry.key 2048
 openssl req -new -key private-registry.key -out private-registry.csr -config certificate-config
 #Sign
 openssl x509 -req -in private-registry.csr -CA registryrootCA.crt -CAkey registryrootCA.key -CAcreateserial -out private-registry.crt -days 10000
+#Append the root certificate to form chain
+cat registryrootCA.crt >> private-registry.crt
 #Add new root certificate to this server
 mkdir /usr/local/share/ca-certificates/registry-root-cert
 cp registryrootCA.crt /usr/local/share/ca-certificates/registry-root-cert

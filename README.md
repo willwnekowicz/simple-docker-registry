@@ -4,6 +4,7 @@ One Click Docker Registry
 OK, so one click might be an exaggeration, but the goal of this project is to create a ridiculously easy setup script for a private docker registry server with authentication through NGINX using SSL.
 
 The script will setup two containers:
+
 1. [docker-registry v0.9.0](https://registry.hub.docker.com/_/registry/)  
   Configured for local storage and persisted by using a volume.
 2. [NGINX](https://registry.hub.docker.com/_/nginx/)  
